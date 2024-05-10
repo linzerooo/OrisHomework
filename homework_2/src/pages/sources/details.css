@@ -1,0 +1,690 @@
+.header {
+    background-color: #072AC8;
+    height: 130px;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.pokeball {
+    position: absolute;
+    top: -110px;
+    right: -50px;
+    opacity: 0.7;
+    min-height: 150px;
+    max-height: 300px;
+}
+
+.back-button{
+    place-self: center;
+    min-height: 40px;
+    max-height: 50px;
+    margin-left: 50px;
+}
+
+.general {
+    margin-top: 100px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+    padding-left: 40px;
+    padding-top: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    min-width: 600px;
+    max-width: 800px;
+}
+
+.namespace{
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+}
+
+.namespace span{
+    font-size: 20px;
+    color: #595F65;
+}
+
+.namespace h1{
+    margin-top: 0px;
+    font-size: 30px;
+    color: #072AC8;
+}
+
+.namespace-container{
+    display: inline-block;
+    justify-content: space-between;
+    display: flex;
+}
+
+.types{
+    max-height: 30px;
+}
+
+@keyframes fill {
+    from { width: 0%; }
+}
+
+.hp-stat, .attack-stat, .defense-stat, .speed-stat {
+    animation: fill 2s ease-out forwards;
+}
+
+.stats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-stats{
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+    position: relative; 
+    margin-bottom: 20px;
+}
+
+.hp {
+    background-color: #60D394;
+    opacity: 0.2;
+    display: inline-block;
+    width: 200px;
+    border-radius: 3px;
+    height: 7px;
+}
+
+.hp-stat{
+    position: absolute;
+    z-index: 2;
+    background-color: #60D394;
+    border-radius: 3px;
+    height: 7px;
+}
+
+.attack {
+    background-color: #F14B3D;
+    opacity: 0.2;
+    display: inline-block;
+    width: 200px;
+    border-radius: 3px;
+    height: 7px;
+}
+
+.attack-stat{
+    position: absolute;
+    z-index: 2;
+    background-color: #F14B3D;
+    border-radius: 3px;
+    height: 7px;
+}
+
+.defense {
+    background-color: #FDD85D;
+    opacity: 0.2;
+    display: inline-block;
+    width: 200px;
+    border-radius: 3px;
+    height: 7px;
+}
+
+.defense-stat{
+    position: absolute;
+    z-index: 2;
+    background-color: #FDD85D;
+    border-radius: 3px;
+    height: 7px;
+}
+
+.speed {
+    background-color: #FF844F;
+    opacity: 0.2;
+    display: inline-block;
+    width: 200px;
+    border-radius: 3px;
+    height: 7px;
+}
+
+.speed-stat{
+    position: absolute;
+    z-index: 2;
+    background-color: #FF844F;
+    border-radius: 3px;
+    height: 7px;
+}
+
+.general img{
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.stats-and-img{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.general p {
+    color: #000000;
+    text-align: left;
+    margin: 0px;
+    margin-bottom: 30px;
+}
+
+.height-weight {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+}
+
+.height-weight span {
+    font-size: 18px;
+    color: #999999;
+    margin-bottom: 10px;
+}
+
+.stat-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 2px solid #CCCCCC;
+    background-color: #F8F9FA;
+    min-height: 50px;
+    min-width: 280px;
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+  
+.stat-container span {
+    color: #595F65;
+    margin: 0 10px;
+}
+
+.move {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-width: 170px;
+    max-width: 200px; 
+    min-height: 130px;
+    max-height: 200px;
+    background-color: #ccc; 
+    border-radius: 10px; 
+    margin: 10px;
+}
+
+.moves-list{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: fit-content;
+    justify-content: center;
+    align-items: center;
+}
+
+.moves-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+.move img{
+    min-width: 80px;
+    max-width: 120px;
+}
+
+.move span{
+   color: #ffffff;
+   font-size: 14px;
+}
+
+.bug-moves{
+    background-color: #99CC33;
+}
+
+.dark-moves{
+    background-color: #666666;
+}
+
+.dragon-moves{
+    background-color: #0066CC;
+}
+
+.electric-moves{
+    background-color: #FFCC33;
+}
+
+.fairy-moves{
+    background-color: #CC66CC;
+}
+
+.fighting-moves{
+    background-color: #CC3366;
+}
+
+.fire-moves{
+    background-color: #FF9933;
+}
+
+.flying-moves{
+    background-color: #9999CC;
+}
+
+.ghost-moves{
+    background-color: #3366CC;
+}
+
+.grass-moves{
+    background-color: #339933;
+}
+
+.ground-moves{
+    background-color: #CC6633;
+}
+
+.ice-moves{
+    background-color: #66CCCC;
+}
+
+.normal-moves{
+    background-color: #999999;
+}
+
+.poison-moves{
+    background-color: #993399;
+}
+
+.psychic-moves{
+    background-color: #FF6666;
+}
+
+.rock-moves{
+    background-color: #999966;
+}
+
+.steel-moves{
+    background-color: #669999;
+}
+
+.water-moves{
+    background-color: #3399FF;
+}
+
+.ability {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    min-width: 270px;
+    max-width: 300px; 
+    min-height: 100px;
+    max-height: 150px;
+    background-color: #ccc; 
+    border-radius: 10px; 
+    margin: 10px;
+}
+
+.slot-1{
+    background-color: #FFCC33;
+}
+
+.slot-2{
+    background-color: #33CC66;
+}
+
+.slot-3{
+    background-color: #FF6633;
+}
+
+.ability-letter-slot-1{
+    font-size: 18px;
+    color: #FFCC33;
+}
+
+.ability-letter-slot-2{
+    font-size: 18px;
+    color: #33CC66;
+}
+
+.ability-letter-slot-3{
+    font-size: 18px;
+    color: #FF6633;
+}
+
+.ability-name{
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.ability-letter{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Телефоны с экраном 320px */
+
+@media screen and (min-width: 320px) and (max-width: 479px) {
+    .header {
+        height: 100px;
+    }
+
+    .namespace-container{
+        max-width: 270px;
+    }
+
+    .pokeball {
+        top: -70px;
+        right: -50px;
+        min-height: 100px;
+        max-height: 200px;
+    }
+
+    .general {
+        margin-top: 50px;
+        border-radius: 10px;
+        padding-left: 20px;
+        padding-top: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        min-width: 220px;
+        max-width: 270px;
+    }
+
+    .namespace span{
+        font-size: 12px;
+        color: #595F65;
+    }
+    
+    .namespace h1{
+        margin-top: 0px;
+        font-size: 16px;
+        color: #072AC8;
+    }
+
+    .statistics{
+        max-width: 80px;
+    }
+
+    .statistics span{
+        font-size: 12px;
+    }
+    
+    .hp, .attack, .defense, .speed{
+        max-width: 80px;
+    }
+
+    .hp-stat, .attack-stat, .defense-stat, .speed-stat{
+        max-width: 25%;
+    }
+
+    .main-stats{
+        margin-bottom: 5px;
+    }
+
+    .stats-and-img img{
+        min-width: 100px;
+        max-width: 120px;
+        max-height: 120px;
+        min-height: 100px;
+    }
+
+    .height-weight{
+        max-width: 270px;
+    }
+
+    .stat-container{
+        border-radius: 8px;
+        min-height: 30px;
+        max-height: 40px;
+        min-width: 100px;
+        max-width: 120px;
+        border: 1px solid #CCCCCC;
+    }
+
+    .height-weight span{
+        font-size: 12px;
+    }
+
+    .stat-container span{
+        font-size: 10px;
+    }
+
+    .general p{
+        margin-bottom: 10px;
+    }
+
+    .back-button{
+        place-self: center;
+        min-height: 20px;
+        max-height: 40px;
+        margin-left: 20px;
+    }
+
+    .move {
+        min-width: 60px;
+        max-width: 80px; 
+        min-height: 50px;
+        max-height: 80px;
+        margin: 5px;
+        border-radius: 8px;
+    }
+
+    .move img{
+        min-width: 20px;
+        max-width: 30px;
+    }
+
+    .move span{
+        font-size: 8px;
+    }
+
+    .moves-list{
+        min-width: 100px;
+        max-width: 270px;
+    }
+
+    .ability {
+        min-width: 100px;
+        max-width: 110px; 
+        min-height: 50px;
+        max-height: 70px;
+        border-radius: 10px; 
+        margin: 5px;
+    }
+
+    .ability-name{
+        font-size: 10px;
+    }
+
+    .ability-letter {
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        text-align: center;
+        width: 20px;
+        height: 20px;
+        margin-bottom: 5px;
+    }
+
+    .ability-letter-slot-1, .ability-letter-slot-2, .ability-letter-slot-3{
+        font-size: 12px;
+    }
+}
+
+/* Телефоны с экраном 480px и выше */
+
+@media screen and (min-width: 480px) and (max-width: 767px){
+    .header {
+        height: 100px;
+    }
+
+    .namespace-container{
+        max-width: 350px;
+    }
+
+    .pokeball {
+        top: -60px;
+        right: -50px;
+        min-height: 100px;
+        max-height: 200px;
+    }
+
+    .general {
+        margin-top: 50px;
+        border-radius: 10px;
+        padding-left: 20px;
+        padding-top: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        min-width: 350px;
+        max-width: 450px;
+    }
+
+    .namespace span{
+        font-size: 16px;
+        color: #595F65;
+    }
+    
+    .namespace h1{
+        margin-top: 0px;
+        font-size: 20px;
+        color: #072AC8;
+    }
+
+    .statistics{
+        max-width: 80px;
+    }
+
+    .statistics span{
+        font-size: 12px;
+    }
+    
+    .hp, .attack, .defense, .speed{
+        max-width: 120px;
+    }
+
+    .hp-stat, .attack-stat, .defense-stat, .speed-stat{
+        max-width: 40%;
+    }
+
+    .main-stats{
+        margin-bottom: 5px;
+    }
+
+    .stats-and-img img{
+        min-width: 170px;
+        max-width: 200px;
+        max-height: 170px;
+        min-height: 200px;
+    }
+
+    .height-weight{
+        max-width: 350px;
+    }
+
+    .stat-container{
+        border-radius: 8px;
+        min-height: 40px;
+        max-height: 50px;
+        min-width: 150px;
+        max-width: 170px;
+        border: 1px solid #CCCCCC;
+    }
+
+    .height-weight span{
+        font-size: 16px;
+    }
+
+    .stat-container span{
+        font-size: 14px;
+    }
+
+    .general p{
+        margin-bottom: 20px;
+    }
+
+    .back-button{
+        place-self: center;
+        min-height: 20px;
+        max-height: 40px;
+        margin-left: 20px;
+    }
+
+    .move {
+        min-width: 80px;
+        max-width: 100px; 
+        min-height: 60px;
+        max-height: 80px;
+        margin: 5px;
+        border-radius: 8px;
+    }
+
+    .move img{
+        min-width: 20px;
+        max-width: 30px;
+    }
+
+    .move span{
+        font-size: 8px;
+    }
+
+    .moves-list{
+        min-width: 100px;
+        max-width: 350px;
+    }
+
+    .ability {
+        min-width: 120px;
+        max-width: 140px; 
+        min-height: 60px;
+        max-height: 80px;
+        border-radius: 10px; 
+        margin: 20px;
+    }
+
+    .ability-name{
+        font-size: 12px;
+    }
+
+    .ability-letter {
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        text-align: center;
+        width: 20px;
+        height: 20px;
+        margin-bottom: 5px;
+    }
+
+    .ability-letter-slot-1, .ability-letter-slot-2, .ability-letter-slot-3{
+        font-size: 12px;
+    }
+}
