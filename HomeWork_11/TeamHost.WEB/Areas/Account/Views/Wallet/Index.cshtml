@@ -1,0 +1,116 @@
+@model TeamHost.Application.Contracts.Wallet.GetWalletInfo.GetWalletInfoResponse
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="uk-grid" data-uk-grid>
+    <div class="uk-width-2-3@l">
+        <div class="widjet --wallet">
+            <div class="widjet__head">
+                <h3 class="uk-text-lead">Wallet</h3>
+            </div>
+            <div class="widjet__body">
+                <div class="wallet-info">
+                    <div class="wallet-value">@Model.Balance.ToString("C")</div>
+                    <div class="wallet-label">Available</div>
+                </div>
+                <div class="wallet-actions">
+                    <form asp-area="Account" asp-controller="Wallet" asp-action="ChangeBalance" method="post">
+                        <div class="form-group">
+                            <label for="operation">Operation:</label>
+                            <select class="form-control" id="operation" name="operation">
+                                <option value="deposit">Deposit</option>
+                                <option value="withdraw">Withdraw</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="amount">Amount:</label>
+                            <input type="number" class="form-control" id="amount" name="amount" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="uk-width-1-3@l">
+        <div class="widjet --payment-method">
+            <div class="widjet__head">
+                <h3 class="uk-text-lead">Payment Method</h3><a href="#">Edit</a>
+            </div>
+            <div class="widjet__body">
+                <div class="payment-card">
+                    <div class="payment-card__head">
+                        <div class="payment-card__chip">
+                            <img src="~/img/svgico/payment-card-chip.svg" alt="chip">
+                        </div>
+                        <div class="payment-card__logo">
+                            <img src="~/img/svgico/payment-card-logo.svg" alt="logo">
+                        </div>
+                    </div>
+                    <div class="payment-card__number">**** **** **** 1234</div>
+                    <div class="payment-card__value">1 000 000 ₽</div>
+                </div>
+            </div>
+        </div>
+        <div class="widjet --activities">
+            <div class="widjet__head">
+                <h3 class="uk-text-lead">Purchases</h3><a asp-controller="Store" asp-action="index">View All</a>
+            </div>
+            <div class="widjet__body">
+                <ul class="activities-list">
+                    @foreach (var entity in Model.Purchases)
+                    {
+                        <li class="activities-item">
+                            <div class="activities-item__logo">
+                                <a href="detailed/">
+                                    <img src="~/img/@entity.Game.MainImage" alt="main-image">
+                                </a>
+                            </div>
+                            <div class="activities-item__info">
+                                <a class="activities-item__title" href="detailed/">@entity.Game.Name</a>
+                                <div class="activities-item__date">@entity.Date</div>
+                            </div>
+                            <div class="activities-item__price">@entity.Amount.ToString("C")</div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="widjet --activities">
+            <div class="widjet__head">
+                <h3 class="uk-text-lead">Transactions</h3><a asp-controller="Store" asp-action="index">View All</a>
+            </div>
+            <div class="widjet__body">
+                <ul class="activities-list">
+                    @foreach (var entity in Model.Transactions)
+                    {
+                        <li class="activities-item">
+                            <div class="activities-item__info">
+                                <span class="activities-item__title">
+                                    @entity.Amount > 0 ? <span>Пополнение</span> : <span>Снятие</span>
+                                </span>
+                                <div class="activities-item__date">@entity.Date</div>
+                            </div>
+                            <div class="activities-item__price">@entity.Amount.ToString("C")</div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("changeBalanceForm").addEventListener("submit", function (event) {
+        let operation = document.getElementById("operation").value;
+        let amount = parseFloat(document.getElementById("amount").value);
+        let balance = @Html.Raw(Json.Serialize(@Model.Balance));
+
+        if (operation === "withdraw" && amount > balance) {
+            document.getElementById("balanceError").style.display = "block";
+            event.preventDefault();
+        }
+    });
+</script>
